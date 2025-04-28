@@ -2,9 +2,7 @@ import React from 'react'
 
 function TV () {
   return (
-    <div>
-      TV
-    </div>
+    <div className="h-[60vh] text-black text-3xl flex justify-center items-center">TV</div>
   )
 }
 
