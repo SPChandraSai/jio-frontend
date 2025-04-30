@@ -3,7 +3,7 @@ import React from 'react'
 function CategoriesSection({title, id}) {
   return (
     <div className="py-8 px-6">
-        <h2 id={id} className="text-2xl font-medium mb-6 scroll-m-[100px]">
+        <h2 id={id} className="text-2xl font-medium mb-6 scroll-m-[100px] ">
             {title}
         </h2>
         <ul className="flex gap-4 w-full overflow-scroll">

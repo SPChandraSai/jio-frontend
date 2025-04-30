@@ -18,7 +18,7 @@ export default function Header() {
     const activeTabKey=path.split("/")[1];
 
     return (
-        <header className="bg-[#0d0e10] py-4 w-full fixed top-0 z-50 border-b-2 border-b-gray">
+        <header className="bg-[#0d0e10] py-4 w-full fixed top-0 z-50 border-b-2 border-b-gray-500">
             <div className="lg:mx-auto mx-2 lg:px-4 flex items-center text-nowrap">
                 <div className="flex">
                     <Link href="/" >
@@ -32,10 +32,10 @@ export default function Header() {
                     </Link>
                     <Link
                         href="/subscription"
-                        className="ml-4 mr-4 md:px-4 py-1 font-medium rounded-3xl flex items-center gap-2 text-[#cla362] border-[#cla362] border text-sm md:text-base"
+                        className="ml-4 mr-4 md:px-4 py-1 font-medium rounded-3xl flex items-center gap-2 text-[#cla362] border-[#f8bc74] border text-sm md:text-base"
                     >
                         <Image src="/crown.svg" height={16} width={16} alt="crown" />
-                        <span className="pr-4">
+                        <span className="pr-4 text-[#f8bc74]">
                             Go Premium
                         </span>
                     </Link>
