@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const ENDPOINT = {
     // auth routes
     login: "/auth/login",
@@ -47,3 +49,13 @@ export const ENDPOINT = {
 }
 
 export const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+export const api=axios.create({
+    baseURL: API_BASE_URL,
+})
+
+export async function getBannerData(){
+    const resp=await api.get(ENDPOINT.discoverNowPlaying);
+    const data=resp?.data?.response?.results   ;
+    return data;
+}
