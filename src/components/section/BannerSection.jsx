@@ -1,26 +1,50 @@
 import { getBannerData } from '@/lib/api'
 import React, { Suspense } from 'react'
 import { Skeleton } from '../atom/Skeleton';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
+import Link from 'next/link';
 
 async function BannerSection() {
-  <Suspense fallback={BannerSectionFallback}>
-    <BannerSectionContent/>
-  </Suspense>
-} 
+  return (
+    <Suspense fallback={<BannerSectionFallback />}>
+      <BannerSectionContent />
+    </Suspense>
+  )
+}
 
 async function BannerSectionContent() {
   const data = await getBannerData();
   return (
-    <h1 className="w-full h-[500px] bg-black flex justify-center items-center">BannerSection</h1>
+    <Carousel
+      opts={{
+        align: "center",
+        loop: true,
+      }}
+      className="w-full md:px-0 px-4"
+    >
+      <CarouselContent className="">
+        {data?.map((vid) => (
+          <CarouselItem key={vid.id} className="w-full max-w-[700px] h-[500px]">
+            <h2>{vid.title}</h2>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <div className="absolute bottom-4 right-[12%] hidden md:flex">
+        <CarouselPrevious className="w-[60px] h-[60px]" />
+        <CarouselNext className="w-[60px] h-[60px] ml-2" />
+      </div>
+    </Carousel>
   )
 }
 
 function BannerSectionFallback() {
-  <div className="flex items-center justify-center gap-5">
-    <Skeleton className="h-[500px] w-[700px] rounded-lg" />
-    <Skeleton className="h-[500px] w-[700px] rounded-lg" />
-    <Skeleton className="h-[500px] w-[700px] rounded-lg" />
-  </div>
+  return (
+    < div className="flex items-center justify-center gap-5" >
+      <Skeleton className="bg-[#6c668530] h-[500px] w-[700px] rounded-lg" />
+      <Skeleton className="bg-[#6c668530] h-[500px] w-[700px] rounded-lg" />
+      <Skeleton className="bg-[#6c668530] h-[500px] w-[700px] rounded-lg" />
+    </div >
+  )
 }
 
 export default BannerSection;
