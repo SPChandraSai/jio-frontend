@@ -4,16 +4,16 @@ import { Skeleton } from '../atom/Skeleton';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
 import Link from 'next/link';
 
-async function BannerSection() {
+async function BannerSection({fetcher}) {
   return (
     <Suspense fallback={<BannerSectionFallback />}>
-      <BannerSectionContent />
+      <BannerSectionContent fetcher={fetcher}/>
     </Suspense>
   )
 }
 
-async function BannerSectionContent() {
-  const data = await getBannerData();
+async function BannerSectionContent({fetcher}) {
+  const data = await fetcher();
   return (
     <Carousel
       opts={{
@@ -24,7 +24,7 @@ async function BannerSectionContent() {
     >
       <CarouselContent className="">
         {data?.map((vid) => (
-          <CarouselItem key={vid.id} className="w-full max-w-[700px] h-[500px]">
+          <CarouselItem key={vid.id} className="w-full max-w-[700px] h-[500px] border-2 border-gray-400">
             <h2>{vid.title}</h2>
           </CarouselItem>
         ))}

@@ -53,11 +53,3 @@ export const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 export const api = axios.create({
     baseURL: API_BASE_URL,
 });
-
-export async function getBannerData() {
-    const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-    await delay(2000); // 2sec delay
-    const resp = await api.get(ENDPOINT.discoverNowPlaying);
-    const data = resp?.data?.response?.results;
-    return data;
-}
