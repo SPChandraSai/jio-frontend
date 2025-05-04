@@ -20,7 +20,7 @@ export const ENDPOINT = {
     fetchComedyMovies: `/movies/comedy`,
     fetchHorrorMovies: `/movies/horror`,
     fetchRomanceMovies: `/movies/romance`,
-    fetchAnimeNovies: `/movies/anime`,
+    fetchAnimeMovies: `/movies/anime`,
 
     // tv shows routes
     fetchActionTvShows: `/tv/action`,
@@ -49,6 +49,7 @@ export const ENDPOINT = {
 }
 
 export const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
 export const api = axios.create({
     baseURL: API_BASE_URL,
 });

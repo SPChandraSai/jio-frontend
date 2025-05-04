@@ -20,7 +20,7 @@ async function CategoriesContent({fetcher}) {
   return (
     <ul className="flex gap-4 w-full overflow-scroll scrollbar-hide">
       {data?.map((item) => {
-        return <li className="min-w-[200px] h-[300px] rounded-lg border-2 border-red-500" key={item.id}>{item.title}</li>
+        return <li className="min-w-[200px] h-[300px] rounded-lg border-2 border-red-500" key={item.id}>{item.title || item.name}</li>
       })}
     </ul>
   )
