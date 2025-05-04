@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react'
 import { Skeleton } from '../atom/Skeleton'
-import { getTopRatedData } from '@/lib/api';
 
 function CategoriesSection({ title, id, fetcher }) {
   return (
