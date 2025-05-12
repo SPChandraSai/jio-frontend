@@ -1,6 +1,6 @@
 import BannerSection from "@/components/section/BannerSection";
 import CategoriesSection from "@/components/section/CategoriesSection";
-import Jumper from "@/components/section/Jumper";
+import JumperSection from "@/components/section/Jumper";
 import { api, ENDPOINT } from "@/lib/api";
 
 export default function Home() {
@@ -8,11 +8,11 @@ export default function Home() {
     {
       label: "Top Rated",
       href: "top-rated",
-      fetcher: async function getTopRatedData() {
-        const resp = await api.get(ENDPOINT.discoverTopRated);
-        const data = resp?.data?.response?.results;
-        return data;
-      }
+      fetcher:async function getTopRatedData() {
+      const resp = await api.get(ENDPOINT.discoverTopRated);
+      const data = resp?.data?.response?.results;
+      return data;
+    }
     },
     {
       label: "Popular",
@@ -20,33 +20,32 @@ export default function Home() {
       fetcher:async function getPopular(){
         const resp = await api.get(ENDPOINT.discoverTrending);
         const data = resp?.data?.response?.results;
-        return data;    
+        return data;
       }
     },
     {
       label: "Upcoming",
       href: "upcoming",
-      fetcher:async function getUpcoming(){
+      fetcher: async function getUpcoming() {
         const resp = await api.get(ENDPOINT.discoverUpcoming);
         const data = resp?.data?.response?.results;
-        return data;    
+        return data;
       }
     },
   ];
-
-  async function getHomeBannerData() {
+   async function getHomeBannerData() {
     const resp = await api.get(ENDPOINT.discoverNowPlaying);
     const data = resp?.data?.response?.results;
     return data;
-}
+  }
 
   return (
     <>
-      <Jumper list={list} />
+    <JumperSection list={list}/>
       <BannerSection fetcher={getHomeBannerData}/>
-      {/* // list of categories*/}
+    {/* // list of categories  */}
       {list.map((item) => {
-        return <CategoriesSection key={item.label} title={item.label} id={item.href} fetcher={item.fetcher}/>
+        return <CategoriesSection key={item.label} title={item.label} id={item.href} fetcher={item.fetcher} />
       })}
     </>
   );

@@ -19,6 +19,7 @@ function CategoriesSection({ title, id, fetcher }) {
 
 async function CategoriesContent({fetcher}) {
   const data=await fetcher();
+  console.log(data);
   if(!data||data.length===0){
     return(
       <div className="flex flex-col items-center justify-center w-full h-[300px] py-12">
