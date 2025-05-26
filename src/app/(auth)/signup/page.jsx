@@ -16,7 +16,7 @@ import { api, ENDPOINT } from "@/lib/api";
 import { useRouter } from "next/navigation";
 import { LucideLoader2 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
-// import { userLoggedInDetails } from "@/redux/userSlice";
+import { userLoggedInDetails } from "@/redux/userSlice";
 // import { toast } from "sonner";
 
 export default function LoginForm() {
@@ -26,7 +26,7 @@ export default function LoginForm() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   // const userData = useSelector((state) => state.user);
   // if (userData.isLoggedIn) {
   //   return router.push("/");
@@ -43,7 +43,7 @@ export default function LoginForm() {
         confirmPassword: confirmPassword,
       });
       if (res.data.status === "success") {
-        // dispatch(userLoggedInDetails(res.data.user));
+        dispatch(userLoggedInDetails(res.data.user));
         router.push("/");
       }
       if (res.data) {
