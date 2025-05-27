@@ -46,7 +46,7 @@ export default function LoginPage() {
             }
         }
         catch (err) {
-            console.log("err: ", err);
+            console.log("err: ", err.response.data.message);
             alert("Invalid creds");
         }
         finally {
