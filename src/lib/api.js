@@ -57,3 +57,8 @@ export const api = axios.create({
     // credentials
     withCredentials: true,
 });
+
+export function getWatchUrl(vidId, mediaType) {
+    const prefix = mediaType === "tv" ? "tv" : "movies";
+    return `${prefix}/watch?id=${vidId}`;
+}

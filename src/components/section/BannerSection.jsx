@@ -1,4 +1,4 @@
-import { getBannerData, media } from '@/lib/api'
+import { getBannerData, getWatchUrl, media } from '@/lib/api'
 import React, { Suspense } from 'react'
 import { Skeleton } from '../atom/Skeleton';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
@@ -6,19 +6,19 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { InboxIcon } from 'lucide-react';
 
-async function BannerSection({fetcher}) {
+async function BannerSection({ fetcher }) {
   return (
     <Suspense fallback={<BannerSectionFallback />}>
-      <BannerSectionContent fetcher={fetcher}/>
+      <BannerSectionContent fetcher={fetcher} />
     </Suspense>
   )
 }
 
-async function BannerSectionContent({fetcher}) {
+async function BannerSectionContent({ fetcher }) {
   const data = await fetcher();
   // console.log(data);
-  if(!data||data.length===0){
-    return(
+  if (!data || data.length === 0) {
+    return (
       <div className="flex flex-col items-center justify-center w-full h-[500px] py-12">
         <InboxIcon
           className="w-32 h-32 text-slate-400 mb-10"
@@ -39,14 +39,16 @@ async function BannerSectionContent({fetcher}) {
       <CarouselContent className="">
         {data?.map((vid) => (
           <CarouselItem key={vid.id} className="w-full max-w-[700px] h-[500px]">
-            <Image
-              src={media(vid?.poster_path)}
-              alt=""
-              width={700}
-              height={500}
-              className="w-full h-full bg-slate-600 rounded-lg object-cover"
-              quality={30}
-            />
+            <Link href={getWatchUrl(vid.id, vid.media_type)}>
+              <Image
+                src={media(vid?.poster_path)}
+                alt=""
+                width={700}
+                height={500}
+                className="w-full h-full bg-slate-600 rounded-lg object-cover"
+                quality={30}
+              />
+            </Link>
           </CarouselItem>
         ))}
       </CarouselContent>
