@@ -4,6 +4,7 @@ import Footer from "@/components/section/Footer";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 import StoreProvider from "@/providers/StoreProvider";
+import AuthProvider from "@/providers/AuthProvider";
 
 export const metadata = {
   title: "Create Next App",
@@ -17,9 +18,11 @@ export default function RootLayout({ children }) {
         className={`${inter.className} antialiased bg-[#090808] text-white`}
       >
         <StoreProvider>
-          <Header />
-          {children}
-          <Footer />
+          <AuthProvider>
+            <Header />
+            {children}
+            <Footer />
+          </AuthProvider>
         </StoreProvider>
       </body>
     </html>
