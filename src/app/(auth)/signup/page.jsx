@@ -27,10 +27,10 @@ export default function LoginForm() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const dispatch = useDispatch();
-  // const userData = useSelector((state) => state.user);
-  // if (userData.isLoggedIn) {
-  //   return router.push("/");
-  // }
+  const userData = useSelector((state) => state.user);
+  if (userData.isLoggedIn) {
+    return router.push("/");
+  }
 
   const onSubmit = async () => {
     try {
