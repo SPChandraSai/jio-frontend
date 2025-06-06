@@ -1,4 +1,5 @@
 "use client";
+
 import CategoriesSection from '@/components/section/CategoriesSection';
 import { buttonVariants } from '@/components/ui/button';
 import { api, ENDPOINT } from '@/lib/api';

@@ -48,13 +48,12 @@ async function CategoriesContent({ fetcher }) {
       </Link>
     })}
   </ul>
-
 }
 
 export function CategoriesFallback() {
   return (
     <ul className="flex gap-4 w-full overflow-scroll scrollbar-hide">
-      {new Array(12).fill(0).map((e, index) => (
+      {new Array(20).fill(0).map((e, index) => (
         <Skeleton key={index} className="min-w-[200px] h-[300px] bg-[#6c668530]" />
       ))}
     </ul>

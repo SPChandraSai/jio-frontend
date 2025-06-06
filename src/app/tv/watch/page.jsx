@@ -1,3 +1,4 @@
+import ShareButton from '@/components/atom/ShareButton';
 import WishlistButton from '@/components/atom/WishListButton';
 import { buttonVariants } from '@/components/ui/button';
 import { api, ENDPOINT } from "@/lib/api";
@@ -7,7 +8,7 @@ import React from 'react';
 
 const page = async ({ searchParams: { id, poster_path } }) => {
     const details = (await api.get(ENDPOINT.getTvShowsDetails(id))).data.data.results?.[0];
-    console.log("poster_path", poster_path);
+    console.log("posterpath", poster_path);
     return (
         <div className="mt-[80px]">
             {details ? (
@@ -25,10 +26,10 @@ const page = async ({ searchParams: { id, poster_path } }) => {
                                 poster_path: details.poster_path,
                                 name: details.name,
                                 media_type: details.media_type || "tv",
-                                // poster_path: poster_path
+                                poster_path: poster_path
                             }}
                         />
-                        {/* <ShareButton /> */}
+                        <ShareButton />
                     </div>
                 </>
             ) : (
