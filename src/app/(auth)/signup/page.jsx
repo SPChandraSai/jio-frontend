@@ -17,7 +17,7 @@ import { useRouter } from "next/navigation";
 import { LucideLoader2 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { userLoggedInDetails } from "@/redux/userSlice";
-// import { toast } from "sonner";
+import { toast } from "sonner";
 
 export default function LoginForm() {
   const [name, setName] = useState("");
@@ -47,14 +47,13 @@ export default function LoginForm() {
         router.push("/");
       }
       if (res.data) {
-        // toast("Account Created!");
-        alert("Account Created!");
+        toast("Account Created!");
       }
     } 
     catch (err) {
       console.log("err: ", err.response.data.message);
       // console.log("err: ", err);
-      alert("Something went wrong");
+      toast("Something went wrong");
     } finally {
       setLoading(false);
     }

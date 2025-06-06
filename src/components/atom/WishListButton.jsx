@@ -5,6 +5,7 @@ import { Button } from "../ui/button";
 import { LoaderPinwheel, PlusIcon } from "lucide-react";
 import { useSelector } from "react-redux";
 import { api, ENDPOINT } from "@/lib/api";
+import { toast } from "sonner";
 
 const WishlistButton = ({wishlist}) => {
     const user = useSelector((state) => state.user);
@@ -18,11 +19,11 @@ const WishlistButton = ({wishlist}) => {
             setLoading(true);
             const res = await api.post(ENDPOINT.addToWishlist, wishlist);
             if(res.status==200){
-                alert("wishlist added");
+                toast("wishlist added");
             }
         }
         catch (err) {
-            alert(err.response.data.message);
+            toast(err.response.data.message);
         }
         finally {
             setLoading(false);

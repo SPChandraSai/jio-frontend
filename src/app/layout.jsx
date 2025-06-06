@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 import StoreProvider from "@/providers/StoreProvider";
 import AuthProvider from "@/providers/AuthProvider";
+import { Toaster } from "@/components/ui/sonner"
 
 export const metadata = {
   title: "Create Next App",
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
           <AuthProvider>
             <Header />
             {children}
+            <Toaster />
             <Footer />
           </AuthProvider>
         </StoreProvider>
