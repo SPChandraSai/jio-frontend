@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import { api, ENDPOINT } from "@/lib/api";
 import { LucideLoader2 } from "lucide-react";
 import { toast } from "sonner";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 
 function ResetPassword() {
@@ -22,7 +22,7 @@ function ResetPassword() {
   const [loading, setLoading] = useState(false);
   // responsible for showing the dialog box
   const [showDialog, setShowDialog] = useState(false);
-  // const router = useRouter();
+  const router = useRouter();
   const [otp, setOtp] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");

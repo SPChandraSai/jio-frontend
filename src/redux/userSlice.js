@@ -7,7 +7,7 @@ const initialState = {
 
 const userSlice = createSlice({
     name: "user",
-    initialState, 
+    initialState,
     reducers: {
         userLoggedInDetails: (state, action) => {
             state.isLoggedIn = true;
@@ -17,6 +17,11 @@ const userSlice = createSlice({
             state.isLoggedIn = false;
             state.user = null;
         },
+        updateUserPremium: (state, action) => {
+            if (state.user) {
+                state.user.isPremium = action.payload;
+            }
+        }
     },
 });
 
