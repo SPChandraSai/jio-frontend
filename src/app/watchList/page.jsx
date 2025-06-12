@@ -49,7 +49,7 @@ function WatchList() {
           Login to see your watchlist
         </p>
 
-        <Link href={"/login"} className={cn(buttonVariants(), "rounded-full px-6 mt-4")}>Login</Link>
+        <Link href={"/login"} className={cn(buttonVariants(), "rounded-full px-6 mt-4 bg-pink-600")}>Login</Link>
       </div>}
     </div>
   )
