@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Streaming Service Web Application
 
-## Getting Started
+A **modern streaming platform** replicating core features like browsing movies/TV shows, secure subscriptions, and seamless playback. Built with **Next.js**, **TailwindCSS**, and **ShadcnUI**, it delivers a responsive and immersive viewing experience.
 
-First, run the development server:
+<img width="1901" height="834" alt="image" src="https://github.com/user-attachments/assets/b2f9fdc1-a7c6-4522-a529-d9db4c5e7152" />
+
+
+---
+
+## 📖 About the Project
+
+This project recreates the core features of a streaming service:
+
+* Browse and stream movies and TV shows with TMDB API integration.
+* Seamless subscription and payment integration with Razorpay.
+* Mobile-first design for an intuitive user experience across devices.
+* Built for scalability with modular components and optimized streaming performance.
+
+It’s designed as a **learning project** to master full-stack web development with **Next.js**, media handling, and payment workflows.
+
+---
+
+## ✨ Key Features
+
+✅ **Responsive UI**: Fully mobile-friendly layout with TailwindCSS.
+✅ **Movie & TV Streaming**: Dynamic content powered by TMDB API.
+✅ **Secure Payments**: Integrated Razorpay for subscription plans.
+✅ **Account Recovery**: Email-based password reset for user convenience.
+✅ **High-quality Playback**: Smooth and buffer-free streaming experience.
+✅ **Reusable Components**: Built with ShadcnUI for consistency and rapid development.
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+*Attractive landing page displaying featured movies and TV shows.*
+<img width="1901" height="834" alt="image" src="https://github.com/user-attachments/assets/a4e7fe44-b334-4e3a-b493-1fa73df0df06" />
+
+
+### 🎬 Movies Page
+
+*Attractive Movie page displaying featured movies.*
+<img width="1896" height="848" alt="image" src="https://github.com/user-attachments/assets/f97331e7-24f0-4035-9a18-20b3dba3dd29" />
+
+
+### 🎬 Tv Page
+
+*Attractive TV page displaying featured TV shows.*
+<img width="1904" height="863" alt="image" src="https://github.com/user-attachments/assets/9ff8e555-e2ed-495e-a763-4c176b54f9e0" />
+
+
+### 📱 Mobile View
+
+*Optimized layout for smaller screens with responsive design.*
+<img width="353" height="750" alt="image" src="https://github.com/user-attachments/assets/648ca3e3-d30b-4d66-9a3e-27b55a884992" />
+
+
+### 💳 Subscription Page
+
+*Integrated Razorpay checkout for secure subscriptions.*
+<img width="1890" height="854" alt="image" src="https://github.com/user-attachments/assets/dac34405-c027-4cca-a6d7-6dcb04151abe" />
+
+
+---
+
+## 🗺️ Application Flow
+
+1. **User visits home page** → Browses movies and TV content.
+2. **Selects a movie/show** → Navigates to the detail page.
+3. **Clicks “Play” or “Subscribe”** → Initiates payment via Razorpay if required.
+4. **Payment success** → Unlocks premium streaming access.
+5. **Starts streaming** → Enjoys content in a custom player.
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology       | Purpose                           |
+| ---------------- | --------------------------------- |
+| **Next.js**      | Server-side rendering & routing   |
+| **TailwindCSS**  | Rapid and responsive styling      |
+| **ShadcnUI**     | Beautiful, reusable UI components |
+| **Razorpay API** | Secure online payments            |
+| **TMDB API**     | Movie and TV content integration  |
+| **Node.js**      | Backend logic and API routes      |
+
+---
+
+## ⚙️ Getting Started
+
+Clone the repository and set it up locally:
 
 ```bash
+git clone https://github.com/SPChandraSai/jio-frontend.git
+cd jio-frontend
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Configure your environment variables for Razorpay and TMDB API keys in a `.env.local` file:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```env
+RAZORPAY_KEY_ID=your_key_id
+RAZORPAY_KEY_SECRET=your_key_secret
+TMDB_API_KEY=your_tmdb_key
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🌐 Live Demo
 
-To learn more about Next.js, take a look at the following resources:
+🔗 [View Live Project](https://jio-frontend-indol.vercel.app/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📈 Learning Outcomes
 
-## Deploy on Vercel
+* Built a real-world streaming platform with playback capability.
+* Integrated Razorpay for subscription-based content access.
+* Implemented TMDB API for dynamic movie/TV data display.
+* Designed a custom movie player interface.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
+---
+
+## 📩 Contact
+
+📧 [s.p.chandrasai820@gmail.com](mailto:s.p.chandrasai820@gmail.com)
